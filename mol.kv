@@ -1,0 +1,43 @@
+TextWidget:#:kivy
+
+<TextWidget>:
+    BoxLayout:
+        size: root.size
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 6
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_x: 3
+                Label:
+                    text: 'FW'
+                    size_hint_y: 1
+                TextInput:
+                    id: fw
+                    size_hint_y: 2
+                Label:
+                    text: 'mol'
+                    size_hint_y: 1
+                TextInput:
+                    id: mol
+                    size_hint_y: 2
+                Label:
+                    text: 'mL'
+                    size_hint_y: 1
+                TextInput:
+                    id: ml
+                    size_hint_y: 2
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_x: 2
+                
+                Label:
+                    id: value
+                    text: root.text
+                Button:
+                    text: "計算"
+                    on_press: root.calculate()
+        Label:
+            id: alert
+            text: '数値を入力してください。'
+            size_hint_y: 1
